@@ -1,0 +1,48 @@
+package com.equitymobile.pages.transfer.ownEquity;
+
+import com.equitymobile.pages.BasePage;
+import com.equitymobile.pages.otp.OTP;
+import com.equitymobile.pages.transfer.toEquity.PaymentConfirmationPage;
+import io.appium.java_client.MobileElement;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+
+public class OwnEquityAccountDetailsPage  extends BasePage {
+    @AndroidFindBy(id = "ke.co.equitygroup.equitymobile.debug:id/payToParent")
+    MobileElement ownAccountListSelect;
+
+    @AndroidFindBy(id = "ke.co.equitygroup.equitymobile.debug:id/editTextValue")
+    MobileElement enterAmountField;
+
+    @AndroidFindBy(id = "ke.co.equitygroup.equitymobile.debug:id/paymentReasonValue")
+    MobileElement paymentReason;
+
+    @AndroidFindBy(id = "ke.co.equitygroup.equitymobile.debug:id/sendActionHolder")
+    MobileElement clickSendMoneyOwnAccount;
+    @AndroidFindBy(id = "ke.co.equitygroup.equitymobile.debug:id/errorText")
+    MobileElement errorMessageOwnAccount;
+
+
+    public OwnEquityAccountDetailsPage(){}
+
+    public SelectAccountDisplayedPage clickToSelectAccount(){
+        clickElement(ownAccountListSelect);
+        return new SelectAccountDisplayedPage();
+    }
+    public OwnEquityAccountDetailsPage enterAmountOwnAccount(String amount){
+        sendKeys(enterAmountField,amount);
+        return new OwnEquityAccountDetailsPage();
+    }
+    public OwnEquityAccountDetailsPage enterReasonOwnAccount(String reason){
+        sendKeys(paymentReason,reason);
+        return new OwnEquityAccountDetailsPage();
+    }
+    public PaymentConfirmationPage clickSendMoneyButtonOwnAccount(){
+        clickElement(clickSendMoneyOwnAccount);
+        return new PaymentConfirmationPage();
+    }
+    public  String getErrorMessageOwnAccount(){
+        return getTextValue(errorMessageOwnAccount);
+    }
+
+}
+

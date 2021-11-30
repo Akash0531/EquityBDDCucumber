@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+	<test name="SubLoginStepDef">
+		<parameter name="platformName" value="Android" />
+		<!--<parameter name="udid" value="" />-->
+		<parameter name="deviceName" value="EquityTest" />
+		<parameter name="systemPort" value="10000" />
+		<parameter name="chromeDriverPort" value="14000" />
+		<classes>
+			<class name="com.equitymobile.runner.TestNGRunnerTest"/>
+		</classes>
+	</test>
+<!--	<test name="SubLoginStepDef">-->
+<!--		<parameter name="platformName" value="iOS" />-->
+<!--		&lt;!&ndash;<parameter name="udid" value="" />&ndash;&gt;-->
+<!--		<parameter name="deviceName" value="4CDA2542-F88A-416A-8ADC-5F45B6B3A464" />-->
+<!--		<parameter name="systemPort" value="10000" />-->
+<!--		<parameter name="chromeDriverPort" value="14000" />-->
+<!--		<classes>-->
+<!--			<class name="com.equitymobile.runner.TestNGRunnerTest"/>-->
+<!--		</classes>-->
+<!--	</test>-->
+</suite> <!-- Suite -->
